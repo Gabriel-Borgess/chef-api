@@ -7,6 +7,8 @@ import recipeRoutes from './routes/recipeRoutes.js';
 dotenv.config();
 
 const app = express();
+app.use(express.static('public'));
+
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI); // Conecta ao MongoDB
