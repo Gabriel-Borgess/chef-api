@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+
+# Arquivos de ambiente
+.env
+
+# Arquivos de log e dados temporários
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de compilação nativa
+/build/Release
+/*.suo
+/*.user
+/*.pdb
+*.gcda
+*.gcno
+*.o
+*.obj
+
+# Arquivos de configuração do Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Outros
+.DS_Store
+Thumbs.db
