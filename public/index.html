@@ -7,49 +7,22 @@
   <!-- Include Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Include Tippy.js library -->
+  <!-- if development -->
+<script type="module" src="http://localhost:5173/@vite/client"></script>
+<script type="module" src="http://localhost:5173/src/App.jsx"></script>
+  
   <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/tippy.js@6.3.3/dist/tippy-bundle.umd.min.js"></script>
+  <script type="module">
+    import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {}
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  </script>
 </head>
-<body class="bg-gray-100">
-
-  <div class="container mx-auto my-8 p-8 bg-white rounded shadow-md">
-    <h1 class="text-3xl font-semibold mb-6">Recipe App Dashboard</h1>
-
-    <!-- Form to send data to the backend -->
-    <form id="recipeForm" class="mb-6">
-      <label for="recipeTitle" class="block text-sm font-medium text-gray-700">Recipe Title:</label>
-      <input type="text" id="recipeTitle" name="recipeTitle" class="mt-1 p-2 w-full border rounded-md" required>
-      <label for="recipeDescription" class="block text-sm font-medium text-gray-700 mt-4">Recipe Description:</label>
-      <input type="text" id="recipeDescription" name="recipeDescription" class="mt-1 p-2 w-full border rounded-md">
-      <label for="recipeImage" class="block text-sm font-medium text-gray-700 mt-4">Recipe Image:</label>
-      <input type="text" id="recipeImage" name="recipeImage" class="mt-1 p-2 w-full border rounded-md">
-      <label for="recipeIngredients" class="block text-sm font-medium text-gray-700 mt-4">Recipe Ingredients:</label>
-      <input type="text" id="recipeIngredients" name="recipeIngredients" class="mt-1 p-2 w-full border rounded-md">
-      <label for="recipeInstructions" class="block text-sm font-medium text-gray-700 mt-4">Recipe Instructions:</label>
-      <input type="text" id="recipeInstructions" name="recipeInstructions" class="mt-1 p-2 w-full border rounded-md">
-      <label for="recipeCategory" class="block text-sm font-medium text-gray-700 mt-4">Recipe Category:</label>
-      <input type="text" id="recipeCategory" name="recipeCategory" class="mt-1 p-2 w-full border rounded-md">
-
-      <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Submit Recipe</button>
-    </form>
-
-    <!-- Display received data from the backend -->
-    <div id="recipeList">
-      <h2 class="text-2xl font-semibold mb-4">Recipes:</h2>
-      <div class="grid grid-cols-3 gap-4 flex-wrap justify-center" id="recipeGrid"></div>
-    </div>
-
-    <!-- Recipe Modal -->
-    <div id="recipeModal" class="hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-      <div id="recipeModalContent" class="bg-white p-8 rounded-md">
-        <h2 class="text-2xl font-semibold mb-4" id="modalRecipeTitle"></h2>
-        <p class="text-gray-700" id="modalRecipeDescription"></p>
-        <button id="closeRecipeModal" class="mt-4 bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Close</button>
-      </div>
-    </div>
-
-    <script src="index.js"></script>
-  </div>
+    
+ 
 
 </body>
 </html>
